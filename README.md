@@ -43,5 +43,5 @@ Installation
 ------------
 
 ```sh
-$ composer.phar install #TODO
+composer require measurements/bytes
 ```
