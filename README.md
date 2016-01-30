@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/arnovr/measurements-bytes.svg?branch=master)](https://travis-ci.org/arnovr/measurements-bytes)
+
 Unit of Measurement - Bytes
 ===========================
 A small library to represent the bytes unit of measurement.
