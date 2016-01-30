@@ -1,0 +1,25 @@
+{
+    "name": "measurements/bytes",
+    "description": "Unit of Measurement - Bytes",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arno van Rossum",
+            "email": "arno@van-rossum.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Measurements\\Bytes\\":  "src/Bytes"
+        }
+    },
+    "require": {
+        "phpmd/phpmd": "^2.3"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.4",
+        "phpunit/phpunit": "^5.1",
+        "squizlabs/php_codesniffer": "^2.5"
+    }
+}
