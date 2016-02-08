@@ -133,12 +133,12 @@ class BytesTest extends \PHPUnit_Framework_TestCase
     public function incorrectDataTypes()
     {
         return [
-            [''],
-            [null],
-            [false],
-            [[]],
-            [-1], // no negatives
-            ['3443532523s'],
+            [ '' ],
+            [ null ],
+            [ false ],
+            [ [ ] ],
+            [-1 ], // no negatives
+            [ '3443532523s' ],
         ];
     }
 

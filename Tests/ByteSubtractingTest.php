@@ -33,14 +33,14 @@ class ByteSubtractingTest extends \PHPUnit_Framework_TestCase
     public function listOfSubtractingUnits()
     {
         return [
-            [KiloBytes::allocateUnits(2), KiloBytes::allocateUnits(1), KiloBytes::allocateUnits(1)],
-            [MegaBytes::allocateUnits(2), MegaBytes::allocateUnits(1), MegaBytes::allocateUnits(1)],
-            [GigaBytes::allocateUnits(2), GigaBytes::allocateUnits(1), GigaBytes::allocateUnits(1)],
-            [TeraBytes::allocateUnits(2), TeraBytes::allocateUnits(1), TeraBytes::allocateUnits(1)],
-            [KiloBytes::allocateUnits(1), Bytes::allocateUnits(2), Bytes::allocateUnits(1022)],
-            [MegaBytes::allocateUnits(1), KiloBytes::allocateUnits(2),KiloBytes::allocateUnits(1022)],
-            [GigaBytes::allocateUnits(1), MegaBytes::allocateUnits(2), MegaBytes::allocateUnits(1022)],
-            [TeraBytes::allocateUnits(1), GigaBytes::allocateUnits(2), GigaBytes::allocateUnits(1022)],
+            [ KiloBytes::allocateUnits(2), KiloBytes::allocateUnits(1), KiloBytes::allocateUnits(1) ],
+            [ MegaBytes::allocateUnits(2), MegaBytes::allocateUnits(1), MegaBytes::allocateUnits(1) ],
+            [ GigaBytes::allocateUnits(2), GigaBytes::allocateUnits(1), GigaBytes::allocateUnits(1) ],
+            [ TeraBytes::allocateUnits(2), TeraBytes::allocateUnits(1), TeraBytes::allocateUnits(1) ],
+            [ KiloBytes::allocateUnits(1), Bytes::allocateUnits(2), Bytes::allocateUnits(1022) ],
+            [ MegaBytes::allocateUnits(1), KiloBytes::allocateUnits(2), KiloBytes::allocateUnits(1022) ],
+            [ GigaBytes::allocateUnits(1), MegaBytes::allocateUnits(2), MegaBytes::allocateUnits(1022) ],
+            [ TeraBytes::allocateUnits(1), GigaBytes::allocateUnits(2), GigaBytes::allocateUnits(1022) ],
         ];
     }
 }

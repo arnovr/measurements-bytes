@@ -13,14 +13,14 @@ class ByteCollection implements AbleToConvertToBytes, AbleToAllocateBytes, Itera
     /**
      * @var AbleToConvertToBytes[]
      */
-    private $list = [];
+    private $list = [ ];
 
     /**
      * @param AbleToConvertToBytes $bytes
      */
     public function add(AbleToConvertToBytes $bytes)
     {
-        $this->list[] = $bytes;
+        $this->list[ ] = $bytes;
     }
 
     /**

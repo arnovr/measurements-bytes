@@ -55,7 +55,7 @@ class ByteCollectionTest extends \PHPUnit_Framework_TestCase
             )->bytes()
         );
 
-        $expected = $this->createCollection([GigaBytes::allocateUnits(1), Bytes::allocateUnits(1)]);
+        $expected = $this->createCollection([ GigaBytes::allocateUnits(1), Bytes::allocateUnits(1) ]);
 
         $this->assertEquals(
             $expected,
@@ -116,7 +116,7 @@ class ByteCollectionTest extends \PHPUnit_Framework_TestCase
 
 
         $i = 0;
-        foreach($collection as $key => $bytes)
+        foreach ($collection as $key => $bytes)
         {
             $this->assertSame($i, $key);
             $this->assertInstanceOf(Bytes::class, $bytes);
@@ -132,7 +132,7 @@ class ByteCollectionTest extends \PHPUnit_Framework_TestCase
     private function createCollection($expected)
     {
         $collection = new ByteCollection();
-        array_map(function ($unit) use ($collection) {
+        array_map(function($unit) use ($collection) {
             $collection->add($unit);
         }, $expected);
         return $collection;
