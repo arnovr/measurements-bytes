@@ -15,7 +15,6 @@ class KiloBytes extends Bytes implements AbleToAllocateBytes, AbleToConvertToByt
     protected function __construct($kiloBytes)
     {
         $this->assertCorrectByteValue($kiloBytes);
-        $this->units = $kiloBytes;
         parent::__construct((int) $kiloBytes * 1024);
     }
 
@@ -26,7 +25,16 @@ class KiloBytes extends Bytes implements AbleToAllocateBytes, AbleToConvertToByt
     public static function allocateBytes(Bytes $bytes)
     {
         return KiloBytes::allocateUnits(
-            intval($bytes->numberOfBytes() / 1024)
+            self::calculateUnitsFromBytes($bytes->numberOfBytes())
         );
+    }
+
+    /**
+     * @param integer $bytes
+     * @return integer
+     */
+    protected static function calculateUnitsFromBytes($bytes)
+    {
+        return intval($bytes / 1024);
     }
 }

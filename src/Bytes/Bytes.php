@@ -12,11 +12,6 @@ class Bytes implements AbleToAllocateBytes, AbleToConvertToBytes
     /**
      * @var integer
      */
-    protected $units;
-
-    /**
-     * @var integer
-     */
     protected $bytes;
 
     /**
@@ -37,6 +32,14 @@ class Bytes implements AbleToAllocateBytes, AbleToConvertToBytes
     public static function allocateUnits($units)
     {
         return new static($units);
+    }
+
+    /**
+     * @return integer
+     */
+    public function units()
+    {
+        return static::calculateUnitsFromBytes($this->numberOfBytes());
     }
 
     /**
@@ -73,17 +76,6 @@ class Bytes implements AbleToAllocateBytes, AbleToConvertToBytes
     }
 
     /**
-     * @return integer
-     */
-    public function units()
-    {
-        if (get_class($this) === Bytes::class) {
-            return $this->bytes;
-        }
-        return $this->units;
-    }
-
-    /**
      * @return KiloBytes
      */
     public function kiloBytes()
@@ -94,6 +86,7 @@ class Bytes implements AbleToAllocateBytes, AbleToConvertToBytes
             )
         );
     }
+
 
     /**
      * @return MegaBytes
@@ -192,5 +185,14 @@ class Bytes implements AbleToAllocateBytes, AbleToConvertToBytes
         if ($bytes < 0) {
             throw new InvalidUnitException('Bytes could not be a negative value');
         }
+    }
+
+    /**
+     * @param integer $numberOfBytes
+     * @return integer
+     */
+    private static function calculateUnitsFromBytes($numberOfBytes)
+    {
+        return $numberOfBytes;
     }
 }

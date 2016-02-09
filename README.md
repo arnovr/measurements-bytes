@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/arnovr/measurements-bytes.svg?branch=master)](https://travis-ci.org/arnovr/measurements-bytes)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/arnovr/measurements-bytes/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/arnovr/measurements-bytes/?branch=master)
 
 Unit of Measurement - Bytes
 ===========================
