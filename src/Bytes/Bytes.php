@@ -191,7 +191,7 @@ class Bytes implements AbleToAllocateBytes, AbleToConvertToBytes
      * @param integer $bytes
      * @return integer
      */
-    private static function calculateUnitsFromBytes($bytes)
+    protected static function calculateUnitsFromBytes($bytes)
     {
         return $bytes;
     }
