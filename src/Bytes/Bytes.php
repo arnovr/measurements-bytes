@@ -174,7 +174,7 @@ class Bytes implements AbleToAllocateBytes, AbleToConvertToBytes
     }
 
     /**
-     * @param $bytes
+     * @param integer $bytes
      * @throws InvalidUnitException
      */
     protected function assertCorrectByteValue($bytes)
