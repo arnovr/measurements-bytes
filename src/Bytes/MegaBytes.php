@@ -15,7 +15,6 @@ class MegaBytes extends Bytes implements AbleToAllocateBytes
     protected function __construct($megaBytes)
     {
         $this->assertCorrectByteValue($megaBytes);
-        $this->units = $megaBytes;
         parent::__construct((int) $megaBytes * 1024 * 1024);
     }
 
@@ -26,7 +25,16 @@ class MegaBytes extends Bytes implements AbleToAllocateBytes
     public static function allocateBytes(Bytes $bytes)
     {
         return MegaBytes::allocateUnits(
-            intval($bytes->numberOfBytes() / 1024 / 1024)
+            self::calculateUnitsFromBytes($bytes->numberOfBytes())
         );
+    }
+
+    /**
+     * @param integer $bytes
+     * @return integer
+     */
+    protected static function calculateUnitsFromBytes($bytes)
+    {
+        return intval($bytes / 1024 / 1024);
     }
 }

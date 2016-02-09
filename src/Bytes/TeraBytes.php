@@ -15,7 +15,6 @@ class TeraBytes extends Bytes implements AbleToAllocateBytes, AbleToConvertToByt
     protected function __construct($teraBytes)
     {
         $this->assertCorrectByteValue($teraBytes);
-        $this->units = $teraBytes;
         parent::__construct((int) $teraBytes * 1024 * 1024 * 1024 * 1024);
     }
 
@@ -26,7 +25,16 @@ class TeraBytes extends Bytes implements AbleToAllocateBytes, AbleToConvertToByt
     public static function allocateBytes(Bytes $bytes)
     {
         return TeraBytes::allocateUnits(
-            intval($bytes->numberOfBytes() / 1024 / 1024 / 1024 / 1024)
+            self::calculateUnitsFromBytes($bytes->numberOfBytes())
         );
+    }
+
+    /**
+     * @param integer $bytes
+     * @return integer
+     */
+    protected static function calculateUnitsFromBytes($bytes)
+    {
+        return intval($bytes / 1024 / 1024 / 1024 / 1024);
     }
 }
